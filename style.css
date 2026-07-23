@@ -1,0 +1,79 @@
+/* 以撒复刻 - 界面样式（暗色地下室氛围） */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #0a0806;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", monospace;
+  color: #d8c9a3;
+  overflow: hidden;
+}
+
+#wrap {
+  position: relative;
+  width: 960px;
+  height: 640px;
+  box-shadow: 0 0 80px #000;
+}
+
+canvas {
+  display: block;
+  background: #000;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* 全屏覆盖层 */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 5, 3, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  z-index: 10;
+}
+.overlay.hidden { display: none; }
+
+.overlay h1 {
+  font-size: 56px;
+  letter-spacing: 6px;
+  color: #e8d9a8;
+  text-shadow: 0 4px 0 #4a2c1a, 0 0 24px #a8643c;
+}
+.overlay h1.dead { color: #c0392b; text-shadow: 0 4px 0 #2c0a06, 0 0 24px #7a1a10; }
+.overlay h1.win  { color: #f1c40f; text-shadow: 0 4px 0 #4a3206, 0 0 24px #a8841a; }
+
+.overlay .sub { font-size: 18px; color: #a3906b; letter-spacing: 2px; }
+
+.help {
+  background: rgba(40, 26, 14, 0.6);
+  border: 2px solid #5a4020;
+  padding: 16px 28px;
+  border-radius: 4px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+.help b { color: #f1c40f; }
+
+.overlay button {
+  font-family: inherit;
+  font-size: 22px;
+  padding: 12px 42px;
+  background: #7a4a22;
+  color: #ffe9b0;
+  border: 3px solid #2c1a0a;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: transform .08s, background .15s;
+}
+.overlay button:hover { background: #9a5e2c; transform: scale(1.05); }
+
+.tip { font-size: 12px; color: #6a5a40; }
