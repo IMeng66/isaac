@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以撒的结合 · 复刻版 (The Binding of Isaac Clone)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <!-- 游戏画布 -->
+    <canvas id="game" width="960" height="640"></canvas>
+
+    <!-- 标题 / 开始界面 -->
+    <div id="title-screen" class="overlay">
+      <h1>以撒的结合</h1>
+      <p class="sub">THE BINDING OF ISAAC · 网页复刻</p>
+      <div class="help">
+        <p><b>WASD</b> 移动　<b>方向键</b> 射击</p>
+        <p>清理房间开启房门，击败 Boss 进入下一层</p>
+        <p>拾取道具强化自己，小心别死掉！</p>
+      </div>
+      <button id="start-btn">开始游戏</button>
+      <p class="tip">提示：也可用鼠标点击画布后直接键盘操作</p>
+    </div>
+
+    <!-- 死亡界面 -->
+    <div id="gameover-screen" class="overlay hidden">
+      <h1 class="dead">你死了</h1>
+      <p class="sub" id="death-cause">YOU DIED</p>
+      <button id="retry-btn">重新开始</button>
+    </div>
+
+    <!-- 通关界面 -->
+    <div id="win-screen" class="overlay hidden">
+      <h1 class="win">通关！</h1>
+      <p class="sub">你击败了最终 Boss，逃出了地下室</p>
+      <p class="sub" id="win-stats"></p>
+      <button id="win-retry-btn">再来一局</button>
+    </div>
+  </div>
+
+  <!-- 依赖顺序加载（普通脚本，全局命名空间，可直接 file:// 打开） -->
+  <script src="js/utils.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/items.js"></script>
+  <script src="js/dungeon.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
